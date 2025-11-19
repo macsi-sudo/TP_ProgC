@@ -1,23 +1,31 @@
 #include <stdio.h>
 
-int main(void) {
+int main() {
     int n;
+    int i;
+    int U0 = 0, U1 = 1, Un;
 
-    printf("Entrez la valeur de n : ");
+    printf("Entrez un nombre (max 20) : ");
     scanf("%d", &n);
 
-    int a = 0, b = 1, c;
+    if (n < 0 || n > 20) {
+        printf("Erreur : la valeur doit etre entre 0 et 20.\n");
+        return 0;
+    }
 
-    printf("%d ", a);
-    if (n >= 1) printf("%d ", b);
+    printf("Suite de Fibonacci jusqu'a U%d :\n", n);
 
-    for (int i = 2; i <= n; i++) {
-        c = a + b;
-        printf("%d ", c);
-        a = b;
-        b = c;
+    if (n >= 0) printf("0 ");
+    if (n >= 1) printf("1 ");
+
+    for (i = 2; i <= n; i++) {
+        Un = U0 + U1;
+        printf("%d ", Un);
+        U0 = U1;   // Décalage
+        U1 = Un;
     }
 
     printf("\n");
     return 0;
 }
+
