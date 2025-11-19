@@ -1,6 +1,7 @@
 #ifndef OPERATOR_H
 #define OPERATOR_H
 
+// Déclarations des fonctions de calcul
 int somme(int a, int b);
 int difference(int a, int b);
 int produit(int a, int b);
